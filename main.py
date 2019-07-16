@@ -32,7 +32,6 @@ def webhook():
     return 'OK'
 
 @handler.add(MessageEvent, message=TextMessage)
-print("rick")
 def handle_message(event):
     print("morty")
     line_bot_api.reply_message(
