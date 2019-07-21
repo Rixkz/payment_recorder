@@ -11,9 +11,9 @@ handler = WebhookHandler('e95453e5afce1e2dd34af3807c6d417e')
 @app.route("/")
 def greeting():
     return "hello"
-
-@app.route("/webhook", methods=['POST'])
-def webhook():
+    
+@app.route("/callback", methods=['POST'])
+def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
 
@@ -30,12 +30,13 @@ def webhook():
 
     return 'OK'
 
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print("morty")
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
+
 
 if __name__ == "__main__":
     app.run()
