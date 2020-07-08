@@ -6,8 +6,8 @@ import json
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('7V069b8jBNfXHeQLg/2baW1qV84JytuoDk+y1wuBOwqVEJl8LeCWtxl+13NJkBDl5MSYmJC96oYq52h3FE0UiEbAjJjkgKU9cSLOr3w3wMBSazjaJhd5ssyA+4wQS5I1xIhRV1Gkj9viyPfS0WchaQdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('e95453e5afce1e2dd34af3807c6d417e')
+line_bot_api = LineBotApi()
+handler = WebhookHandler()
 
 @app.route("/")
 def greeting():
